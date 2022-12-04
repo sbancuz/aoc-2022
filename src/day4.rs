@@ -7,14 +7,12 @@ type SolutionType = i32;
 pub fn input_generator(input: &str) -> Vec<InputType> {
     input.lines()
         .map(|line| -> InputType {
-            let rhs;
-            let lhs;
-            (lhs, rhs) = line.split_once(",").unwrap();
-            let mut rit = rhs.split("-");
-            let mut lit = lhs.split("-");
+            let (lhs, rhs) = line.split_once(",").unwrap();
+            let (llhs, lrhs) = rhs.split_once("-").unwrap();
+            let (rlhs, rrhs) = lhs.split_once("-").unwrap();
             (
-                (lit.next().unwrap().parse().unwrap(), lit.next().unwrap().parse().unwrap()),
-                (rit.next().unwrap().parse().unwrap(), rit.next().unwrap().parse().unwrap())    
+                (llhs.parse::<i32>().unwrap(), lrhs.parse::<i32>().unwrap()),
+                (rlhs.parse::<i32>().unwrap(), rrhs.parse::<i32>().unwrap())    
             )
         })
         .collect()
