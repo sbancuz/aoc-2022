@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 use std::{vec, usize};
 
+=======
+>>>>>>> 0f35515 (Day6)
 use aoc_runner_derive::{aoc, aoc_generator};
 
 type InputType = String;
